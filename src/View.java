@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  <P>To use this class, edit the code to suit your needs.  
 */
 public final class View {
+    JFrame frame;
   
   /** 
    Build and display minimal GUI.
@@ -21,14 +22,17 @@ public final class View {
    No menu is included.
   */
   public static void main(String... aArgs){
-    View app = new View();
+    View app = new View(new JFrame("Test Frame"));
     app.buildAndDisplayGui();
+  }
+
+  public View(JFrame frame) {
+      this.frame = frame;
   }
   
   // PRIVATE
 
   private void buildAndDisplayGui(){
-    JFrame frame = new JFrame("Test Frame"); 
     buildContent(frame);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.pack();
